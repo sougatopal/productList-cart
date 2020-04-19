@@ -67,7 +67,7 @@
         "webpack-dev-server": "^3.9.0",
         "webpack-jarvis": "^0.3.2",
         "webpack-merge": "^4.2.2",
-        "less": "^3.11.1", 
+        "less": "^3.11.1",
         "less-loader": "^5.0.0"
     },
     "dependencies": {
@@ -78,7 +78,7 @@
         "react-router-dom": "^5.1.2",
         "redux": "^4.0.4",
         "redux-thunk": "^2.3.0",
-        "less": "^3.11.1", 
+        "less": "^3.11.1",
         "less-loader": "^5.0.0"
     },
     "jest": {

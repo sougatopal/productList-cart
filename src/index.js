@@ -3,16 +3,13 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import store from './store';
 import App from './components/App';
-import reset from './constants/css/reset';
-
 
 
 ReactDOM.render(
     <BrowserRouter>
         <Fragment>
-            <Provider store={store}>
+            <Provider >
                 <App />
             </Provider>
         </Fragment>
