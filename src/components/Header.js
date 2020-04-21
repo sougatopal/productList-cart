@@ -12,7 +12,13 @@ const Header = props => (
         </div>
         <div className="alc">
           <div className="search">
-            <input type="text" name="" id="" />
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Type to search"
+              onChange={props.searchItem}
+            />
             <i className="fa fa-search" />
           </div>
           <div className="cart-icon">
