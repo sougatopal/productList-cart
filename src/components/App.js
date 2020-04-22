@@ -16,11 +16,19 @@ class App extends React.Component {
     this.itemFilter = this.itemFilter.bind(this);
     this.itemResetFilter = this.itemResetFilter.bind(this);
     this.searchItem = this.searchItem.bind(this);
+    this.showCount = this.showCount.bind(this);
   }
   addToCart(items) {
     let itemtobeAdded = { ...items };
-    itemtobeAdded.quantity = 1;
-    this.setState({ cart: this.state.cart.concat(itemtobeAdded) });
+    let cartList = this.state.cart;
+    let itemPresent = cartList.find(({ name }) => name === itemtobeAdded.name);
+    if (itemPresent) {
+      itemPresent.quantity = itemPresent.quantity + 1;
+      this.setState({ cart: cartList });
+    } else {
+      itemtobeAdded.quantity = 1;
+      this.setState({ cart: this.state.cart.concat(itemtobeAdded) });
+    }
   }
   removeItem(index) {
     let cartArray = [...this.state.cart];
@@ -69,10 +77,18 @@ class App extends React.Component {
     originalItems = null;
     this.setState({ items: filteredItems });
   }
+  showCount() {
+    let count = 0;
+    let originalItems = this.state.cart;
+    originalItems.forEach(elem => {
+      count = count + elem.quantity;
+    });
+    return count;
+  }
   render() {
     return (
       <>
-        <Header cart={this.state.cart} searchItem={this.searchItem} />
+        <Header showCount={this.showCount} searchItem={this.searchItem} />
         <Switch>
           <Route
             path="/"
