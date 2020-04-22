@@ -9,14 +9,6 @@
           "id": "codesandbox.browser",
           "options": {
             "port": 8080,
-            "url": "https://1rgpn-8080.sse.codesandbox.io"
-          },
-          "closeable": true
-        },
-        {
-          "id": "codesandbox.browser",
-          "options": {
-            "port": 8080,
             "url": "https://gv1uw-8080.sse.codesandbox.io"
           },
           "closeable": true
